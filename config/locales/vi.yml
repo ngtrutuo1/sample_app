@@ -1,0 +1,35 @@
+vi:
+  layout: 
+    base_title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
+
+    header_partial:
+      vi: "Tiếng Việt"
+      en: "Tiếng Anh"
+      home: "Trang chủ"
+      help: "Hỗ trợ"
+      login: "Đăng nhập"
+
+  static_page:
+    home:
+      welcome: "Chào mừng đến với Sample App"
+      description: "Đây là trang chủ của ứng dụng"
+      sample: "mẫu"
+      signup: "Đăng ký ngay"
+    help:
+      description: "Được hỗ trợ về Ruby on Rails Tutorial tại"
+      help_page: "trang hỗ trợ Rails Tutorial"
+      book: "sách Ruby on Rails Tutorials"
+      help_description: "Để được hỗ trợ về ứng dụng mẫu này, hãy ghé xem"
+      
+  micropost:
+    home:
+      your_post: "Bài đăng của bạn"
+      content: "Nội dung"
+      date: "Ngày đăng" 
+
+  contact_page:
+    contact: "Liên hệ"
+    home:
+      hello: "Xin chào"
+      description: "Đây là trang Liên hệ"
+      name: "Nguyễn Trung Tường"

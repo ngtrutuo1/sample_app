@@ -1,0 +1,19 @@
+<header class = "navbar navbar-fixed-top navbar-inverse">
+  <div class = "container">
+    <%= link_to "sample app", root_path(locale:I18n.locale), id: "logo" %>
+    <nav>
+      <ul class = "nav navbar-nav navbar-right">
+        <li><%= link_to t("layout.header_partial.home"), home_static_page_index_path %></li>
+        <li><%= link_to t("layout.header_partial.help"), help_static_page_index_path %></li>
+        <li><%= link_to t("layout.header_partial.login"), "#" %></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<body class = "container">
+  <div class = "container language-switcher">
+    <%= link_to t("layout.header_partial.en"), locale:"en" %>
+    <%= link_to t("layout.header_partial.vi"), locale:"vi" %>
+  </div>
+</body>
