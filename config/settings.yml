@@ -1,0 +1,11 @@
+default: &default
+  app_name: "Sample App"
+  email:
+    sender: "no-reply@sampleapp.com"
+
+development:
+  <<: *default
+
+production:
+  <<: *default
+app_name: "Sample App"
