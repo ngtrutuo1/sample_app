@@ -1,0 +1,17 @@
+vi:
+  attributes: 
+    user:
+      name: "Tên"
+      email: "Email"
+      password: "Mật khẩu"
+      male: "Nam"
+      female: "Nữ"
+      other: "Khác"
+      select_gender: "Chọn giới tính"
+      confirmation: "Xác nhận"
+      created_date: "Ngày tạo"
+      updated_date: "Ngày cập nhật"
+      dob: "Ngày sinh"
+  time:
+    formats:
+      long: "%B %d, %Y %H:%M"

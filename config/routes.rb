@@ -23,7 +23,10 @@ Rails.application.routes.draw do
       get "home", on: :collection
     end
 
-    resources :users, only: %i(new create show) 
+    get "/signup", to: "users#new"
+    post "/signup", to: "users#create"
+    
+    resources :users, only: :show
   end
 
 end

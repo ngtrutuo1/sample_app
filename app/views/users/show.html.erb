@@ -1,4 +1,14 @@
-<%= provide :title, @users.name%>
-<h1><%= @users.email %></h1>
-<h1><%= @users.name %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= provide :title, @user.name%>
+<div class="row">
+    <aside class="col-md-4">
+        <section class="user_info">
+            <h1>
+                <%= gravatar_for @user %>
+                <%= @user.name %>
+            </h1>
+            <p><strong><%= t("activerecord.attributes.user.created_date") %>:</strong> <%= l @user.created_at, format: :long %></p>
+            <p><strong><%= t("activerecord.attributes.user.updated_date") %>:</strong> <%= l @user.updated_at, format: :long %></p>
+        </section>
+    </aside>
+</div>
+            

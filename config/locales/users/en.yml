@@ -1,0 +1,19 @@
+en:
+  models:
+    user: "User"
+  attributes: 
+    user:
+      name: "Full Name"
+      email: "Email"
+      password: "Password"
+      male: "Male"
+      female: "Female"
+      other: "Other"
+      select_gender: "Select Gender"
+      confirmation: "Confirmation"
+      created_date: "Created Date"
+      updated_date: "Updated Date"
+      dob: "Date of birth"
+  time:
+    formats:
+      long: "%B %d, %Y %H:%M"
