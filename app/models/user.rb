@@ -15,8 +15,8 @@ class User < ApplicationRecord
                     length: {maximum: Settings.development.user
                                               .max_email_length.to_i}
 
-  validates :password_digest, length: {minimum: Settings.development.user
-                                                        .min_password_length.to_i},
+  validates :password_digest, length: {minimum: Settings
+    .development.user.min_password_length.to_i},
             format: {with: PASSWORD_REQUIREMENT,
                      message: I18n
                        .t("model.user.password_requirement_message")},

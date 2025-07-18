@@ -21,6 +21,7 @@ en:
         description: "This is the home page for the"
         sample: "Sample application"
         signup: "Sign up now"
+        
       help:
         description: "Get help on the Ruby on Rails Tutorial at the"
         help_page: "Rails Tutorial help page"
@@ -32,7 +33,7 @@ en:
       home:
         hello: "Hello"
         description: "This is the Contact page"
-        name: "Nguyễn Trung Tường"
+        name: "Nguyen Trung Tuong"
   
   models:
     user:

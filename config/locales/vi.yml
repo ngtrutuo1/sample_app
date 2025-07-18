@@ -15,6 +15,7 @@ vi:
         description: "Đây là trang chủ của ứng dụng"
         sample: "mẫu"
         signup: "Đăng ký ngay"
+         
       help:
         description: "Được hỗ trợ về Ruby on Rails Tutorial tại"
         help_page: "trang hỗ trợ Rails Tutorial"
