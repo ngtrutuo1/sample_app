@@ -1,5 +1,5 @@
 en:
-  user:
+  users:
     show:
       name: "Full Name"
       email: "Email"

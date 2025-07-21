@@ -39,9 +39,3 @@ vi:
         hello: "Xin chào"
         description: "Đây là trang Liên hệ"
         name: "Nguyễn Trung Tường"
-
-  user:
-    show:
-      created_date: ""
-      updated_date: ""
-    new:

@@ -15,6 +15,14 @@ textarea {
   resize: vertical;
 }
 
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
 /* center utilities */
 .center {
   text-align: center;

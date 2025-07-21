@@ -1,5 +1,5 @@
 vi:
-  user:
+  users:
     show:
       name: "Tên"
       email: "Email"
