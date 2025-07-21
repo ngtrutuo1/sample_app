@@ -1,18 +1,20 @@
 en:
-  user:
+  users:
     show:
       name: "Full Name"
       email: "Email"
       password: "Password"
-      password_confirmation: "Confirmation"
       male: "Male"
       female: "Female"
       other: "Other"
-      confirmation: "Confirmation"
       created_date: "Created Date"
       updated_date: "Updated Date"
       date_of_birth: "Date of birth"
       gender: "Gender"
+      login_required: "You must log in before accessing to user's profile!"
+    new:
+      password_confirmation: "Confirmation"
+      remember_me: "Remember me on this computer"
     time:
       formats:
         long: "%B %d, %Y %H:%M"

@@ -1,0 +1,16 @@
+en:
+  sessions:
+    new:
+      password: "Password"
+      log_in: "Log in"
+      new_user: "Are you new user?"
+      sign_up_now: "Sign up now!"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+    create:
+      login_successfully: "Logged in successfully"
+      invalid_login_information: "Your email or your password is unvalid!"
+    destroy:
+      logout: "Log out"
