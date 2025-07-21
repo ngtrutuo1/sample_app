@@ -1,18 +1,20 @@
 vi:
-  user:
+  users:
     show:
       name: "Tên"
       email: "Email"
       password: "Mật khẩu"
-      password_confirmation: "Xác nhận mật khẩu"
       male: "Nam"
       female: "Nữ"
       other: "Khác"
-      confirmation: "Xác nhận"
       created_date: "Ngày tạo"
       updated_date: "Ngày cập nhật"
       date_of_birth: "Ngày sinh"
       gender: "Giới tính"
+      login_required: "Bạn phải đăng nhập trước khi xem thông tin người dùng!"
+    new:
+      password_confirmation: "Xác nhận mật khẩu"
+      remember_me: "Ghi nhớ tôi trên máy tính này"
     time:
       formats:
         long: "%B %d, %Y %H:%M"

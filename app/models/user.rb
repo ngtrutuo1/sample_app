@@ -1,8 +1,10 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
+
   has_secure_password
 
   USER_PERMIT = %i(name email password password_confirmation date_of_birth
-gender).freeze
+  gender).freeze
 
   VALID_EMAIL_REGEX = Regexp.new(Settings.development.user.valid_email_regex,
                                  Regexp::IGNORECASE)
@@ -26,6 +28,17 @@ gender).freeze
   validates :gender, presence: true
 
   before_save :downcase_email
+
+  class << self
+    def digest string
+      cost = if ActiveModel::SecurePassword.min_cost
+               BCrypt::Engine::MIN_COST
+             else
+               BCrypt::Engine.cost
+             end
+      BCrypt::Password.create string, cost:
+    end
+  end
 
   private
 

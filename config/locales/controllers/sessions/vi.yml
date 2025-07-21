@@ -1,0 +1,16 @@
+vi:
+  sessions:
+    new:
+      password: "Mật khẩu"
+      log_in: "Đăng nhập"
+      new_user: "Bạn là người dùng mới?"
+      sign_up_now: "Đăng ký ngay!"
+      users: "Người dùng"
+      account: "Tài khoản"
+      profile: "Hồ sơ"
+      settings: "Cài đặt"
+    create:
+      login_successfully: "Đăng nhập thành công"
+      invalid_login_information: "Email hoặc mật khẩu của bạn không hợp lế!"
+    destroy: 
+      logout: "Đăng xuất"
