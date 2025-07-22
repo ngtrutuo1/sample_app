@@ -15,6 +15,10 @@ Rails.application.routes.draw do
     resources :micropost_page do  
       get "home", on: :collection
     end
-  end
 
+    get "/signup", to: "users#new"
+    post "/signup", to: "users#create"
+    
+    resources :users, only: :show
+  end
 end
