@@ -6,11 +6,12 @@ Micropost.create(content: "Ruby on Rails is awesome!")
 User.create!(
   name: "Example User",
   email: "example@railstutorial.org",
-  gender: "other",
+  gender: 2,
   date_of_birth: Date.new(1990, 1, 1),
   password: "Abcd123@",
   password_confirmation: "Abcd123@",
-  admin: true
+  admin: true,
+  activated: true, activated_at: Time.zone.now
 )
 
 30.times do |i|
@@ -26,6 +27,7 @@ User.create!(
     gender: gender,
     date_of_birth: dob,
     password: password,
-    password_confirmation: password
+    password_confirmation: password,
+    activated: true, activated_at: Time.zone.now
   )
 end

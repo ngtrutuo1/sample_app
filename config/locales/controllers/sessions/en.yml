@@ -13,5 +13,6 @@ en:
     create:
       login_successfully: "Logged in successfully"
       invalid_login_information: "Your email or your password is unvalid!"
+      account_not_activated: "Your account was not activated"
     destroy:
       logout: "Log out"

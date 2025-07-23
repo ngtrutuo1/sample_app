@@ -1,0 +1,9 @@
+vi:
+  user_mailer:
+    account_activation:
+      account_activation_mail: "Kích hoạt tài khoản"
+      hi: "Xin chào"
+      welcome_message: "Chào mừn đến với Sample App! Nhấn vào đường dẫn dưới đây để kích hoạt tài khoản của bạn:"
+      activate: "Kích hoạt"
+    password_reset:
+      hello: "Xin chào"

@@ -9,7 +9,7 @@ module SessionsHelper
   def current_user
     return @current_user if defined? @current_user
 
-    @current_user = user_from_session || user_from_cookies
+    @current_user = user_from_cookies || user_from_session
   end
 
   def current_user? user
@@ -34,7 +34,6 @@ module SessionsHelper
   end
 
   def remember user
-    user.remember
     cookies.permanent.signed[:user_id] = user.id
     cookies.permanent[:remember_token] = user.remember_token
   end
@@ -54,7 +53,7 @@ module SessionsHelper
     return unless user_id = session[:user_id]
 
     user = User.find_by id: user_id
-    user if user&.authenticated?(session[:remember_token])
+    user if user&.authenticated? :remember, session[:remember_token]
   end
 
   def user_from_cookies
@@ -62,7 +61,7 @@ module SessionsHelper
     return unless remember_token = cookies[:remember_token]
 
     user = User.find_by(id: user_id)
-    return unless user&.authenticated? remember_token
+    return unless user&.authenticated? :remember, remember_token
 
     user
   end

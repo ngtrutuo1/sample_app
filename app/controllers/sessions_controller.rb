@@ -1,17 +1,16 @@
 class SessionsController < ApplicationController
+  before_action :load_user, only: :create
+  before_action :check_authenticated, only: :create
+
   # GET: /login
   def new; end
 
   # POST  : /login
   def create
-    user = find_user
+    return handle_login @user if @user.activated?
 
-    if authenticated? user
-      handle_successful_login user
-    else
-      flash.now[:danger] = t(".invalid_login_information")
-      render :new, status: :unprocessable_entity
-    end
+    flash[:warning] = t(".account_not_activated")
+    redirect_to root_path, status: :see_other
   end
 
   # DELETE  : /logout
@@ -21,30 +20,24 @@ class SessionsController < ApplicationController
   end
 
   private
-  def find_user
-    User.find_by email: params.dig(:session, :email)&.downcase
+  def load_user
+    @user = User.find_by email: params.dig(:session, :email)&.downcase
   end
 
-  def authenticated? user
-    user&.authenticate params.dig(:session, :password)
+  def check_authenticated
+    return if @user&.authenticate(params.dig(:session, :password))
+
+    flash.now[:danger] = t(".invalid_login_information")
+    render :new, status: :unprocessable_entity
   end
 
-  def handle_successful_login user
+  def handle_login user
+    result = params.dig(:session,
+                        :remember_me) == Settings.development.remember_me
     log_in user
-    handle_remember_me(user)
+    remember user if result
 
     flash[:success] = t(".login_successfully")
     redirect_back_or user
-  end
-
-  def handle_remember_me user
-    return unless remember_me_checked?
-
-    remember user
-  end
-
-  def remember_me_checked?
-    params.dig(:session,
-               :remember_me) == Settings.development.params.remember_me
   end
 end
