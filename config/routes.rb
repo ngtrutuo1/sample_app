@@ -3,7 +3,10 @@ Rails.application.routes.draw do
     # Root path
     root "static_page#home"
 
-    # Signup alias
+    # Account activation
+    get 'account_activations/edit'
+
+    # Signup
     get  "/signup", to: "users#new"
     get ":id/settings", to: "users#edit", as: :settings
 
@@ -14,6 +17,7 @@ Rails.application.routes.draw do
 
     resources :users
     resources :account_activations, only: :edit
+    resources :password_resets, only: %i[new create edit update]
 
     # Static pages
     resources :static_page, only: [] do
@@ -21,10 +25,12 @@ Rails.application.routes.draw do
       get "help", on: :collection
     end
 
+    # Contact pages
     resources :contact_page, only: [] do
       get "home", on: :collection
     end
 
+    #Micropost pages
     resources :micropost_page, only: [] do
       get "home", on: :collection
     end

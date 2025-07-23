@@ -10,6 +10,7 @@ vi:
       name: "Tên"
       email: "Email"
       password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
       male: "Nam"
       female: "Nữ"
       other: "Khác"
@@ -18,9 +19,6 @@ vi:
       date_of_birth: "Ngày sinh"
       gender: "Giới tính"
       login_required: "Bạn phải đăng nhập trước khi xem thông tin người dùng!"
-    new:
-      password_confirmation: "Xác nhận mật khẩu"
-      remember_me: "Ghi nhớ tôi trên máy tính này"
     edit:
       update_profile: "Cập nhật hồ sơ"
       edit_info: "Chỉnh sửa thông tin cá nhân"

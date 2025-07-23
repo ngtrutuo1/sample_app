@@ -1,0 +1,17 @@
+vi:
+  password_resets:
+    reset_password: "Đặt lại mật khẩu"
+    password_reset_expired: "Đường dẫn đặt lại mật khẩu này đã hết hạn!"
+    password_reset_invalid: "Đường dẫn đặt lại mật khẩu không hợp lệ!"
+    new:
+      forgot_password: "Quên mật khẩu"
+      submit: "Xác nhận"
+    edit:
+      new_password: "Mật khẩu mới"
+      new_password_confirmation: "Xác nhận mật khẩu mới"
+      update_password: "Cập nhật mật khẩu"
+    update:
+      reset_password_successfully: "Mật khẩu của bạn đã được đặt lại thành công. Một email xác nhận đã được gửi tới bạn. Xin hãy kiểm tra email của bạn!"
+    create:
+      reset_email_sent: "Email đặt lại mật khẩu đã được gửi tới email của bạn. Xin hãy kiểm tra!"
+      email_not_found: "Không tìm thấy email của bạn!"

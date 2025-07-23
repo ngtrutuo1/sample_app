@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
 
   before_save :downcase_email
   before_create :create_activation_digest
@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   USER_PERMIT = %i(name email password password_confirmation date_of_birth
   gender).freeze
+  USER_PERMIT_FOR_PASSWORD_RESET = %i(password password_confirmation).freeze
 
   VALID_EMAIL_REGEX = Regexp.new(Settings.development.user.valid_email_regex,
                                  Regexp::IGNORECASE)
@@ -36,8 +37,18 @@ class User < ApplicationRecord
 
   before_save :downcase_email
 
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns reset_digest: User.digest(reset_token),
+                   reset_sent_at: Time.zone.now
+  end
+
   def activate
     update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
   end
 
   def send_activation_email
@@ -46,9 +57,13 @@ class User < ApplicationRecord
 
   def authenticated? attribute, token
     digest = send "#{attribute}_digest"
-    return false if digest.nil?
+    return false if digest.blank?
 
     BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.development.mailer.expire_hour.hours.ago
   end
 
   def remember
