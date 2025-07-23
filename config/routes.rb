@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     # Root path
     root "static_page#home"
 
+    # Account activation
+    get 'account_activations/edit'
+
     # Signup alias
     get  "/signup", to: "users#new"
     get ":id/settings", to: "users#edit", as: :settings

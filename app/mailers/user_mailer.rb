@@ -3,4 +3,10 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, subject: t(".account_activation_mail")
   end
+
+  def password_reset
+    @greeting = t(".hello")
+
+    mail to: "to@example.org"
+  end
 end
