@@ -1,6 +1,11 @@
 en:
   layout: 
     base_title: "Ruby on Rails Tutorial Sample App"
+    signup: "Sign up"
+    create_my_account: "Create My Account"
+    welcome_to_the_sample_app: "Welcome to the Sample App"
+    user_not_found: "This user does not exist"
+    select_gender: "Select Gender"
 
     header_partial:
       vi: "Vietnamese"
@@ -34,16 +39,3 @@ en:
         hello: "Hello"
         description: "This is the Contact page"
         name: "Nguyen Trung Tuong"
-
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            password:
-              password_requirement_message: "Must include at least one uppercase, one lowercase, one number and one special character."
-              too_short: "must be at least %{count} characters" 
-            date_of_birth:
-              greater_than_curdate: "Cannot be in the future"
-              over_hundred_years: "Must be within 100 years from today"
-        

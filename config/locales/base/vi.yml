@@ -1,6 +1,11 @@
 vi:
   layout: 
     base_title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
+    signup: "Đăng ký"
+    create_my_account: "Tạo tài khoản"
+    welcome_to_the_sample_app: "Chào mừng đến với ứng dụng mẫu"
+    user_not_found: "Người dùng này không tồn tại"
+    select_gender: "Chọn giới tính"
 
     header_partial:
       vi: "Tiếng Việt"
@@ -35,14 +40,8 @@ vi:
         description: "Đây là trang Liên hệ"
         name: "Nguyễn Trung Tường"
 
-  activerecord:
-    errors:
-      models:
-        user:
-          attributes:
-            password:
-              password_requirement_message: "Phải bao gồm ít nhất 1 chữ cái thường, 1 chữ cái in hoa, 1 chữ số và 1 kí tự đặc biệt"
-              too_short: "Phải có ít nhất %{count} kí tự"
-            date_of_birth:
-              greater_than_curdate: "Không thể sinh ra ở tương lai"
-              over_hundred_years: "Phải nằm trong 100 năm tính từ hiện tại"
+  user:
+    show:
+      created_date: ""
+      updated_date: ""
+    new:

@@ -1,0 +1,43 @@
+vi:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name: 
+              blank: "không được để trống. Bạn cần nhập đầy đủ họ và tên!"
+              too_long: "quá dài. Họ và tên không được vượt quá %{count} ký tự!"
+              must_contain_first_and_last: "Họ và tên phải bao gồm cả họ và tên!"
+            password:
+              blank: "không được để trống. Bạn phải nhập mật khẩu!"
+              invalid: "phải bao gồm ít nhất 1 chữ cái thường, 1 chữ cái in hoa, 1 chữ số và 1 kí tự đặc biệt!"
+              too_short: "phải có ít nhất %{count} kí tự!"
+            date_of_birth:
+              greater_than_curdate: "không thể lớn hơn ngày hiện tại!"
+              over_hundred_years: "phải nằm trong 100 năm tính từ hiện tại!"
+              blank: "không được để trống, xin hãy điền ngày sinh của bạn!"
+            gender:
+              blank: "không được để trống, xin hãy chọn giới tính của bạn!"
+            email:
+              invalid: "không hợp lệ. Email đúng có dạng: abc@example.com!" 
+              blank: "không được phép để trống, vui lòng điền email của bạn!"
+              taken: "đã tồn tại. Hãy nhập vào một email khác!"
+    models:
+      user: "Người dùng"
+    attributes: 
+      user:
+        name: "Tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        male: "Nam"
+        female: "Nữ"
+        other: "Khác"
+        confirmation: "Xác nhận"
+        created_date: "Ngày tạo"
+        updated_date: "Ngày cập nhật"
+        date_of_birth: "Ngày sinh"
+        gender: "Giới tính"
+      time:
+        formats:
+          long: "%B %d, %Y %H:%M"

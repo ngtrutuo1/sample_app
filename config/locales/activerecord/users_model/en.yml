@@ -1,0 +1,43 @@
+en:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "can't be blank. You must enter your full name!"
+              too_long: "must be at most %{count} characters long!"
+              must_contain_first_and_last: "must contain both first and last name!"
+            password:
+              blank: "can't be blank. You must enter your password"
+              invalid: "must include at least one uppercase, one lowercase, one number and one special character!"
+              too_short: "must be at least %{count} characters!"
+            date_of_birth:
+              greater_than_curdate: "cannot be in the future!"
+              over_hundred_years: "must be within 100 years from today!"
+              blank: "can't be blank, please enter your date of birth!"
+            gender:
+              blank: "can't be blank, please select your gender!"
+            email:
+              invalid: "is invalid. Valid email format is abc@example.com!" 
+              blank: "can't be blank, please enter your email!"
+              taken: "existed. Please enter another email"
+    models:
+      user: "User"
+    attributes: 
+      user:
+        name: "Full Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirmation"
+        male: "Male"
+        female: "Female"
+        other: "Other"
+        confirmation: "Confirmation"
+        created_date: "Created Date"
+        updated_date: "Updated Date"
+        date_of_birth: "Date of birth"
+        gender: "Gender"
+      time:
+        formats:
+          long: "%B %d, %Y %H:%M"
