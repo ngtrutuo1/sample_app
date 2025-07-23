@@ -4,14 +4,14 @@ Rails.application.routes.draw do
     root "static_page#home"
 
     controller :users do
-      get  '/signup', action: :new
-      post '/signup', action: :create
+      get  "/signup",   to: "users#new",    as: :signup
+      post "/signup" ,  to: "users#create"
     end
 
     controller :sessions do
-      get    '/login',  action: :new
-      post   '/login',  action: :create
-      delete '/logout', action: :destroy
+      get    "/login",  to: "sessions#new",     as: :login
+      post   "/login",  to: "sessions#create"
+      delete "/logout", to: "sessions#destroy", as: :logout
     end
 
     resources :static_page do   

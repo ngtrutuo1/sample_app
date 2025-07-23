@@ -25,6 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_07_21_123044) do
     t.date "date_of_birth"
     t.string "password_digest"
     t.string "gender"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
