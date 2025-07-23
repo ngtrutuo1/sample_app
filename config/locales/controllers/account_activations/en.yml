@@ -1,0 +1,5 @@
+en:
+  account_activations:
+    edit:
+      account_activated: "Your account has been activated successfully"
+      invalid_activation: "Your account activation is invalid"

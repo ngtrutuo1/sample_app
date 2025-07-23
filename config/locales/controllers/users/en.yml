@@ -4,6 +4,8 @@ en:
     user:
       delete: "Delete"
       delete_confirm: "Are you sure to delete account %{name}?"
+    create:
+      acc_activation_message: "Activation email has been sent. Please check your email!"
     show:
       name: "Full Name"
       email: "Email"
