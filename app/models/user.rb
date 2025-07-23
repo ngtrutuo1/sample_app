@@ -1,6 +1,17 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
 
+  USER_PERMIT = %i(name email password password_confirmation date_of_birth
+gender).freeze
+  USER_PERMIT_FOR_PASSWORD_RESET = %i(password password_confirmation).freeze
+
+  VALID_EMAIL_REGEX = Regexp.new(Settings.development.user.valid_email_regex,
+                                 Regexp::IGNORECASE)
+  PASSWORD_REQUIREMENT =
+    Regexp.new(Settings.development.user.password_requirement)
+
+  has_many :microposts, dependent: :destroy
+
   before_save :downcase_email
   before_create :create_activation_digest
 
@@ -9,15 +20,6 @@ class User < ApplicationRecord
   enum gender: {male: 0, female: 1, other: 2}
 
   scope :recent, -> {order(created_at: :desc)}
-
-  USER_PERMIT = %i(name email password password_confirmation date_of_birth
-  gender).freeze
-  USER_PERMIT_FOR_PASSWORD_RESET = %i(password password_confirmation).freeze
-
-  VALID_EMAIL_REGEX = Regexp.new(Settings.development.user.valid_email_regex,
-                                 Regexp::IGNORECASE)
-  PASSWORD_REQUIREMENT =
-    Regexp.new(Settings.development.user.password_requirement)
 
   validates :name, presence: true,
                   length: {maximum: Settings.development.user

@@ -1,0 +1,14 @@
+en:
+  static_page:
+    home:
+      welcome: "Welcome to the Sample App"
+      description: "This is the home page for the"
+      sample: "Sample application"
+      signup: "Sign up now"
+      micropost_feed: "Micropost Feed"
+        
+    help:
+      description: "Get help on the Ruby on Rails Tutorial at the"
+      help_page: "Rails Tutorial help page"
+      book: "Ruby on Rails Tutorials book"
+      help_description: "To get help on this sample app, see the"

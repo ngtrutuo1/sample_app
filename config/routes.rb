@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :users
     resources :account_activations, only: :edit
     resources :password_resets, only: %i[new create edit update]
+    resources :microposts, only: %i(create destroy)
 
     # Static pages
     resources :static_page, only: [] do
@@ -27,11 +28,6 @@ Rails.application.routes.draw do
 
     # Contact pages
     resources :contact_page, only: [] do
-      get "home", on: :collection
-    end
-
-    #Micropost pages
-    resources :micropost_page, only: [] do
       get "home", on: :collection
     end
   end

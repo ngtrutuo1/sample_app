@@ -4,6 +4,13 @@ git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+
+gem "active_storage_validations", "0.9.8"
+
+gem "image_processing", "1.12.2"
+
+gem "i18n-js"
+
 gem "rails", "~> 7.0.5"
 
 gem "bcrypt", "3.1.18"
