@@ -9,6 +9,7 @@ vi:
       account: "Tài khoản"
       profile: "Hồ sơ"
       settings: "Cài đặt"
+      remember_me: "Ghi nhớ tôi trên thiết bị này"
     create:
       login_successfully: "Đăng nhập thành công"
       invalid_login_information: "Email hoặc mật khẩu của bạn không hợp lế!"
