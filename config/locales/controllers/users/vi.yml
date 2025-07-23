@@ -1,5 +1,9 @@
 vi:
   users:
+    please_login: "Xin hãy đăng nhập!"
+    user:
+      delete: "Xóa"
+      delete_confirm: "Bạn chắc chắn muốn xóa tài khoản %{name}?"
     show:
       name: "Tên"
       email: "Email"
@@ -15,6 +19,20 @@ vi:
     new:
       password_confirmation: "Xác nhận mật khẩu"
       remember_me: "Ghi nhớ tôi trên máy tính này"
+    edit:
+      update_profile: "Cập nhật hồ sơ"
+      edit_info: "Chỉnh sửa thông tin cá nhân"
+      user_not_found: "Không thể tìm thấy người dùng này"
+      save_changes: "Lưu thay đổi"
+      change: "Thay đổi"
+      cannot_edit: "Bạn không có quyền để chỉnh sửa hồ sơ này!"
+    update:
+      profile_updated: "Cập nhật tài khoản thành công!"
+    destroy:
+      deleted: "Đã xóa tài khoản %{name} thành công!" 
+      failed: "Xóa tài khoản %{name} thất bại!"
+    index:
+      all_users: "Tất cả người dùng"
     time:
       formats:
         long: "%B %d, %Y %H:%M"

@@ -1,5 +1,9 @@
 en:
   users:
+    please_login: "Please login!"
+    user:
+      delete: "Delete"
+      delete_confirm: "Are you sure to delete account %{name}?"
     show:
       name: "Full Name"
       email: "Email"
@@ -15,6 +19,20 @@ en:
     new:
       password_confirmation: "Confirmation"
       remember_me: "Remember me on this computer"
+    edit:
+      update_profile: "Update Profile"
+      edit_info: "Edit Personal Information"
+      user_not_found: "Can't find this user"
+      save_changes: "Save changes"
+      change: "Change "
+      cannot_edit: "You dont have rights to edit this profile!"
+    update:
+      profile_updated: "Profile updated successfully"
+    destroy:
+      deleted: "Deleted account %{name} successfully"
+      failed: "Failed to delete %{name} account"
+    index:
+      all_users: "All Users"
     time:
       formats:
         long: "%B %d, %Y %H:%M"

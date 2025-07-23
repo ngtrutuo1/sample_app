@@ -5,16 +5,9 @@ class SessionsController < ApplicationController
   # POST  : /login
   def create
     user = find_user
+
     if authenticated? user
-      log_in user
-      if params.dig(:session,
-                    :remember_me) == Settings.development.params.remember_me
-        remember(user)
-      else
-        forget(user)
-      end
-      flash[:success] = t(".login_successfully")
-      redirect_to user, status: :see_other
+      handle_successful_login user
     else
       flash.now[:danger] = t(".invalid_login_information")
       render :new, status: :unprocessable_entity
@@ -29,10 +22,29 @@ class SessionsController < ApplicationController
 
   private
   def find_user
-    User.find_by(email: params.dig(:session, :email)&.downcase)
+    User.find_by email: params.dig(:session, :email)&.downcase
   end
 
   def authenticated? user
-    user&.authenticate(params.dig(:session, :password))
+    user&.authenticate params.dig(:session, :password)
+  end
+
+  def handle_successful_login user
+    log_in user
+    handle_remember_me(user)
+
+    flash[:success] = t(".login_successfully")
+    redirect_back_or user
+  end
+
+  def handle_remember_me user
+    return unless remember_me_checked?
+
+    remember user
+  end
+
+  def remember_me_checked?
+    params.dig(:session,
+               :remember_me) == Settings.development.params.remember_me
   end
 end

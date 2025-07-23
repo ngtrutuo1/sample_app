@@ -1,0 +1,10 @@
+<li>
+    <%= gravatar_for user, size: Settings.development.gravatar_size %>
+    <%= link_to user.name, user %>
+    <% if current_user.admin? && !current_user?(user) %>
+        <%= link_to t(".delete"), user, class: "delete-link", data: {
+            "turbo-method": :delete,
+            turbo_confirm: t(".delete_confirm", name: user.name)
+        } %>
+    <% end %>
+</li>
