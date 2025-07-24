@@ -7,9 +7,13 @@ module SessionsHelper
   end
 
   def current_user
-    return @current_user if defined?(@current_user)
+    return @current_user if defined? @current_user
 
     @current_user = user_from_session || user_from_cookies
+  end
+
+  def current_user? user
+    user.present? && user == current_user
   end
 
   def logged_in?
@@ -19,7 +23,7 @@ module SessionsHelper
   def forget user
     user.forget
     cookies.delete :user_id
-    cookies.delete :remember_tokenend
+    cookies.delete :remember_token
     session.delete :remember_token
   end
 
@@ -35,22 +39,31 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  def redirect_back_or default
+    redirect_to session[:forwarding_url] || default, status: :see_other
+    session.delete :forwarding_url
+  end
+
   private
 
   def user_from_session
-    return unless (user_id = session[:user_id])
+    return unless user_id = session[:user_id]
 
-    user = User.find_by(id: user_id)
+    user = User.find_by id: user_id
     user if user&.authenticated?(session[:remember_token])
   end
 
   def user_from_cookies
-    return unless (user_id = cookies.signed[:user_id])
+    return unless user_id = cookies.signed[:user_id]
+    return unless remember_token = cookies[:remember_token]
 
     user = User.find_by(id: user_id)
-    return unless user&.authenticated?(cookies[:remember_token])
+    return unless user&.authenticated? remember_token
 
-    log_in(user)
     user
   end
 end

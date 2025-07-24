@@ -6,7 +6,7 @@
         <li><%= link_to t("layout.header_partial.home"), home_static_page_index_path %></li>
         <li><%= link_to t("layout.header_partial.help"), help_static_page_index_path %></li>
         <% if logged_in? %>
-          <li><%= link_to t("sessions.new.users"), "#" %>
+          <li><%= link_to t("sessions.new.users"), users_path %>
             <li class="dropdown">
               <%= link_to "#", id: "account", class: "dropdown-toggle", "data-toggle": "dropdown" do %>
                 <%= t("sessions.new.account") %>
@@ -16,7 +16,7 @@
               <li>
                 <%= link_to t("sessions.new.profile"), current_user %>
               </li>
-              <li><%= link_to t("sessions.new.settings"), '#' %></li>
+              <li><%= link_to t("sessions.new.settings"), settings_path(current_user) %></li>
               <li class="divider"></li>
               <li> <%= link_to t("sessions.destroy.logout"), logout_path, method: :delete, data: { turbo_method: :delete } %></li>
             </ul>

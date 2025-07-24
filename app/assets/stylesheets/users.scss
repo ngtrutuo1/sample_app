@@ -1,84 +1,144 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* sidebar */
+/* All users index */
+.users {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 
+  li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+
+    img {
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+
+    a {
+      margin-right: 10px;
+    }
+
+    .delete-link {
+      margin-left: auto;
+      color: #d9534f;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        color: #c9302c;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* Gravatar for update page */
+.gravatar_edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  img {
+    margin-bottom: 10px;
+    border-radius: 50%;
+  }
+
+  a {
+    color: #007bff;
+    font-size: 0.9em;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Sidebar */
 $state-danger-text: #a94442 !default;
 
 aside {
-    section.user_info {
-        margin-top: 20px;
-    }
-    
-    section {
-        padding: 10px 0;
-        margin-top: 20px;
-        &:first-child {
-            border: 0;
-            padding-top: 0;
-        }
+  section.user_info {
+    margin-top: 20px;
+  }
 
-        span {
-            display: block;
-            margin-bottom: 3px;
-            line-height: 1;
-        }
-        
-        h1 {
-            font-size: 1.4em;
-            text-align: left;
-            letter-spacing: -1px;
-            margin-bottom: 3px;
-            margin-top: 0px;
-        }
+  section {
+    margin-top: 20px;
+    padding: 10px 0;
+
+    &:first-child {
+      border: 0;
+      padding-top: 0;
     }
+
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+
+    h1 {
+      margin: 0 0 3px;
+      font-size: 1.4em;
+      letter-spacing: -1px;
+      text-align: left;
+    }
+  }
 }
 
 .gravatar {
-    float: left;
-    margin-right: 10px;
+  float: left;
+  margin-right: 10px;
 }
 
 .gravatar_edit {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
-/* form */
-
-input, textarea, select, .uneditable-input {
-    border: 1px solid #bbb;
-    width: 100%;
-    margin-bottom: 15px;
-    box-sizing: border-box;
+/* Form */
+input,
+textarea,
+select,
+.uneditable-input {
+  width: 100%;
+  margin-bottom: 15px;
+  border: 1px solid #bbb;
+  box-sizing: border-box;
 }
 
 input {
-    height: auto !important;
+  height: auto !important;
 }
 
 #error_explanation {
+  color: red;
+
+  ul {
     color: red;
-    ul {
-        color: red;
-        margin: 0 0 30px;
-    }
+    margin: 0 0 30px;
+  }
 }
 
 .field_with_errors {
-    @extend .has-error;
-    .form-control {
-        color: $state-danger-text;
-    }
+  @extend .has-error;
+
+  .form-control {
+    color: $state-danger-text;
+  }
 }
 
 /* Remember me checkbox */
 .checkbox {
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin: 10px 0;
 
   span {
-    font-weight: normal;
     margin-left: 20px;
+    font-weight: normal;
   }
 }
 

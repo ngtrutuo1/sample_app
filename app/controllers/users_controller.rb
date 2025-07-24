@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   include SessionsHelper
 
-  before_action :require_login, only: %i(show)
-  before_action :load_user, only: %i(show)
+  before_action :require_login, only: %i(index edit update show)
+  before_action :load_user, only: %i(show edit update destroy)
+  before_action :admin_user, only: :destroy
+  before_action :can_update_user, only: %i(edit update)
 
   def show; end
 
@@ -21,10 +23,46 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    @user = User.find_by id: params[:id]
+    if @user.update user_params
+      flash[:success] = t(".profile_updated")
+      redirect_to @user
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def index
+    @pagy, @users = pagy(User.recent, items: Settings.development.page_10)
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t(".deleted", name: @user.name)
+    else
+      flash[:danger] = t(".fail", name: @user.name)
+    end
+
+    redirect_to users_path
+  end
+
   private
+
+  def admin_user
+    return if current_user.admin?
+
+    flash[:danger] = t(".not_authorized")
+    redirect_to root_path
+  end
+
   def require_login
     return if logged_in?
 
+    store_location
+    flash[:danger] = t(".please_login")
     redirect_to login_path
   end
 
@@ -38,5 +76,12 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit User::USER_PERMIT
+  end
+
+  def can_update_user
+    return if current_user? @user
+
+    flash[:warning] = t(".cannot_edit")
+    redirect_to root_path
   end
 end

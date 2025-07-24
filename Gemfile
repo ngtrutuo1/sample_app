@@ -8,6 +8,14 @@ gem "rails", "~> 7.0.5"
 
 gem "bcrypt", "3.1.18"
 
+gem "faker", "2.21.0"
+
+gem "pagy"
+
+gem "byebug"
+
+gem "dotenv-rails"
+
 # Control settings chapter 3
 gem "config"
 

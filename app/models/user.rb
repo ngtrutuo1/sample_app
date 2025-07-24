@@ -3,8 +3,12 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  enum gender: {male: 0, female: 1, other: 2}
+
+  scope :recent, -> {order(created_at: :desc)}
+
   USER_PERMIT = %i(name email password password_confirmation date_of_birth
-  gender).freeze
+                   gender).freeze
 
   VALID_EMAIL_REGEX = Regexp.new(Settings.development.user.valid_email_regex,
                                  Regexp::IGNORECASE)
@@ -12,17 +16,17 @@ class User < ApplicationRecord
     Regexp.new(Settings.development.user.password_requirement)
 
   validates :name, presence: true,
-                  length: {maximum: Settings.development.user
-                                            .max_name_length.to_i}
+                   length: {maximum: Settings.development.user
+                                             .max_name_length.to_i}
   validate :full_name_must_contain_first_and_last
   validates :email, presence: true,
-            format: {with: VALID_EMAIL_REGEX},
-            uniqueness: {case_sensitive: false},
-            length: {maximum: Settings.development.user
-                                      .max_email_length.to_i}
+                    format: {with: VALID_EMAIL_REGEX},
+                    uniqueness: {case_sensitive: false},
+                    length: {maximum: Settings.development.user
+                                              .max_email_length.to_i}
   validates :password, length: {minimum: Settings
     .development.user.min_password_length.to_i},
-            format: {with: PASSWORD_REQUIREMENT}
+                       format: {with: PASSWORD_REQUIREMENT}, allow_nil: true
   validates :date_of_birth, presence: true
   validate :dob_validation
   validates :gender, presence: true
@@ -32,7 +36,7 @@ class User < ApplicationRecord
   def authenticated? remember_token
     return false if remember_digest.nil?
 
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(remember_digest).is_password? remember_token
   end
 
   def remember
