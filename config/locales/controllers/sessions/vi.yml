@@ -13,5 +13,6 @@ vi:
     create:
       login_successfully: "Đăng nhập thành công"
       invalid_login_information: "Email hoặc mật khẩu của bạn không hợp lế!"
+      account_not_activated: "Tài khoản của bạn chưa được kích hoạt"
     destroy: 
       logout: "Đăng xuất"

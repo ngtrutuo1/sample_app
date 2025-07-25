@@ -1,0 +1,5 @@
+vi:
+  account_activations:
+    edit:
+      account_activated: "Tài khoản của bạn đã được kích hoạt thành công"
+      invalid_activation: "Kích hoạt tài khoản không hợp lệ"
