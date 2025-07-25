@@ -1,0 +1,15 @@
+en:
+  password_resets:
+    password_reset_expired: "This password link has expired!"
+    new:
+      forgot_password: "Forgot Password"
+      submit: "Submit"
+    edit:
+      new_password: "New Password"
+      new_password_confirmation: "Confirmation"
+      update_password: "Update Password"
+    update:
+      reset_password_successfully: "Your password is reset successfully"
+    create:
+      reset_email_sent: "A password reset email has been sent to your email. Please check your email!"
+      email_not_found: "Your email was not found!"

@@ -21,6 +21,7 @@ vi:
     new:
       password_confirmation: "Xác nhận mật khẩu"
       remember_me: "Ghi nhớ tôi trên máy tính này"
+      forgot_password: "Quên mật khẩu?"
     edit:
       update_profile: "Cập nhật hồ sơ"
       edit_info: "Chỉnh sửa thông tin cá nhân"

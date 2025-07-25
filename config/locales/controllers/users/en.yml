@@ -21,6 +21,7 @@ en:
     new:
       password_confirmation: "Confirmation"
       remember_me: "Remember me on this computer"
+      forgot_password: "Forgot your password?"
     edit:
       update_profile: "Update Profile"
       edit_info: "Edit Personal Information"

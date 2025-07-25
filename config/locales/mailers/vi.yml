@@ -1,9 +1,12 @@
 vi:
   user_mailer:
+    account_activation: "Kích hoạt tài khoản"
+    password_reset: "Đặt lại mật khẩu"
     account_activation:
-      account_activation_mail: "Kích hoạt tài khoản"
       hi: "Xin chào"
       welcome_message: "Chào mừn đến với Sample App! Nhấn vào đường dẫn dưới đây để kích hoạt tài khoản của bạn:"
       activate: "Kích hoạt"
     password_reset:
-      hello: "Xin chào"
+      to_reset_password: "Để đặt lại mật khẩu, hãy bấm vào đường dẫn dưới đây:"
+      link_expire_message: "Đường dẫn này sẽ hết hạn trong %{hour} giờ."
+      ignore_reset_message: "Nếu bạn không mong muốn mật khẩu của bạn bị đặt lại, hãy bỏ qua email này."
