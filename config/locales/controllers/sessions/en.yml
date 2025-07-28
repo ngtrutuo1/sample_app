@@ -10,6 +10,7 @@ en:
       profile: "Profile"
       settings: "Settings"
       remember_me: "Remember me on this computer"
+      forgot_password: "Forgot your password?"
     create:
       login_successfully: "Logged in successfully"
       invalid_login_information: "Your email or your password is unvalid!"

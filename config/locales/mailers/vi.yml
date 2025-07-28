@@ -6,4 +6,12 @@ vi:
       welcome_message: "Chào mừn đến với Sample App! Nhấn vào đường dẫn dưới đây để kích hoạt tài khoản của bạn:"
       activate: "Kích hoạt"
     password_reset:
-      hello: "Xin chào"
+      password_reset_mail: "Đặt lại mật khẩu"
+      to_reset_password: "Để đặt lại mật khẩu, hãy bấm vào đường dẫn dưới đây:"
+      link_expire_message: "Đường dẫn này sẽ hết hạn trong %{hour} giờ."
+      ignore_reset_message: "Nếu bạn không mong muốn mật khẩu của bạn bị đặt lại, hãy bỏ qua email này."
+    resend_confirmation_after_reset:
+      confirm_password_reset_mail: "Xác nhận đặt lại mật khẩu"
+      confirm_message: "Bạn vừa thay đổi mật khẩu, đăng nhập lại để chúng tôi biết đó là bạn!"
+      click_here: "Nhấn vào đây"
+      link_expire_message: "Đường dẫn này sẽ hết hạn trong %{hour} giờ"
