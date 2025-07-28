@@ -36,7 +36,7 @@
   }
 }
 
-/* Gravatar for update page */
+/*Gravatar for update page*/
 .gravatar_edit {
   display: flex;
   flex-direction: column;
@@ -44,13 +44,13 @@
   margin-top: 20px;
 
   img {
-    margin-bottom: 10px;
     border-radius: 50%;
+    margin-bottom: 10px;
   }
 
   a {
-    color: #007bff;
     font-size: 0.9em;
+    color: #007bff;
     text-decoration: none;
 
     &:hover {
@@ -59,7 +59,7 @@
   }
 }
 
-/* Sidebar */
+/* sidebar */
 $state-danger-text: #a94442 !default;
 
 aside {

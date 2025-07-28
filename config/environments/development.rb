@@ -16,6 +16,7 @@ Rails.application.configure do
 
   # Enable server timing
   config.server_timing = true
+  
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
@@ -36,8 +37,22 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # mailer 
+  # 
+  #
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_url_options = { host: ENV["HOST"], port: ENV["HOST_PORT"]}
+
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    address: ENV["MAIL_ADDRESS"],
+    port: ENV["MAIL_PORT"],
+    user_name: ENV["USER_EMAIL"],
+    password: ENV["USER_PASSWORD"],
+    authentication: "plain",
+    enable_starttls_auto: true
+  }
 
   config.action_mailer.perform_caching = false
 

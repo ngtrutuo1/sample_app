@@ -4,6 +4,8 @@ vi:
     user:
       delete: "Xóa"
       delete_confirm: "Bạn chắc chắn muốn xóa tài khoản %{name}?"
+    create:
+      acc_activation_message: "Email kích hoạt đã được gửi. Xin hãy kiểm tra mail của bạn!"
     show:
       name: "Tên"
       email: "Email"
