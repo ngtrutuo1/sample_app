@@ -1,6 +1,7 @@
 en:
   the_form_contains: "The form contains"
   error: "error"
+  relationship_not_found: "Relationship not found"
 
   shared:
     user_info:
@@ -9,13 +10,15 @@ en:
     micropost_form:
       compose_your_micropost: "Compose your micropost"
       post: "Post"
+    stats:
+      followers: "Followers"
+      following: "Following"
 
   layout: 
     base_title: "Ruby on Rails Tutorial Sample App"
     signup: "Sign up"
     create_my_account: "Create My Account"
     welcome_to_the_sample_app: "Welcome to the Sample App"
-    user_not_found: "This user does not exist"
     select_gender: "Select Gender"
 
     header_partial:
