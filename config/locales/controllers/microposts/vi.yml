@@ -1,0 +1,12 @@
+vi:
+  microposts:
+    micropost:
+      posted_at: "Đăng vào %{time} trước"
+      delete: "Xóa"
+      are_you_sure: "Bạn có chắc chắn muốn xóa bài viết này không?"
+    create:
+      micropost_created: "Bài viết đã được tạo"
+      micropost_failed: "Tạo bài viết không thành công"
+    destroy:
+      micropost_deleted: "Bài viết đã được xóa"
+      micropost_delete_failed: "Xóa bài viết không thành công"

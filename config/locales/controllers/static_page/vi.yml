@@ -1,0 +1,14 @@
+vi:
+  static_page:
+    home:
+      welcome: "Chào mừng đến với Ứng dụng Mẫu"
+      description: "Đây là trang chính của"
+      sample: "ứng dụng mẫu"
+      signup: "Đăng ký ngay bây giờ"
+      micropost_feed: "Dòng thời gian"
+
+    help:
+      description: "Nhận trợ giúp về Ruby on Rails Tutorial tại"
+      help_page: "trang trợ giúp Rails Tutorial"
+      book: "Sách Ruby on Rails Tutorials"
+      help_description: "Để nhận trợ giúp về ứng dụng mẫu này, hãy xem"

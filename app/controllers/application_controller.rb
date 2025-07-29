@@ -22,4 +22,13 @@ class ApplicationController < ActionController::Base
   def default_url_options
     {locale: I18n.locale}
   end
+
+  private
+  def require_login
+    return if logged_in?
+
+    store_location
+    flash[:danger] = t(".please_login")
+    redirect_to login_path
+  end
 end

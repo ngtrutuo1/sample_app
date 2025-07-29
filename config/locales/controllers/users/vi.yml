@@ -19,6 +19,7 @@ vi:
       date_of_birth: "Ngày sinh"
       gender: "Giới tính"
       login_required: "Bạn phải đăng nhập trước khi xem thông tin người dùng!"
+      microposts: "Bài viết"
     edit:
       update_profile: "Cập nhật hồ sơ"
       edit_info: "Chỉnh sửa thông tin cá nhân"

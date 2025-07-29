@@ -1,45 +1,49 @@
-.post-table {
-  width: 100%;
-  border: none;
-  margin-top: 20px;
-  border-collapse: separate;
-  border-spacing: 0 15px;
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-  thead {
-    display: none; 
+textarea {
+   height: 100px;
+  margin-bottom: 5px;
+}
+
+span.picture {
+  margin-top: 10px;
+    
+  input {
+    border: 0;
+  }
+}
+
+.microposts {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
   }
 
-  tbody {
-    tr {
-      background: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      border-radius: 10px;
-      overflow: hidden;
-
-      td {
-        display: block;
-        padding: 15px 20px;
-        border-bottom: 1px solid #eee;
-        font-size: 15px;
-
-        &:first-child {
-          font-weight: bold;
-          color: #555;
-          font-size: 13px;
-          letter-spacing: 0.5px;
-          border-bottom: none;
-        }
-
-        &:last-child {
-          border-bottom: none;
-        }
-      }
-
-      &:hover {
-        background-color: #f9f9f9;
-        transform: translateY(-1px);
-        transition: all 0.2s ease-in-out;
-      }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
     }
+  }
+
+  .timestamp {
+    color: $gray-light;
+    display: block;
+    margin-left: 60px;
   }
 }

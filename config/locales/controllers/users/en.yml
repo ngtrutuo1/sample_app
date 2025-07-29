@@ -19,6 +19,7 @@ en:
       date_of_birth: "Date of birth"
       gender: "Gender"
       login_required: "You must log in before accessing to user's profile!"
+      microposts: "Microposts"
     edit:
       update_profile: "Update Profile"
       edit_info: "Edit Personal Information"

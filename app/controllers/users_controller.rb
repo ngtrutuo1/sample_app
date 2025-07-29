@@ -6,7 +6,10 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
   before_action :can_update_user, only: %i(edit update)
 
-  def show; end
+  def show
+    @page, @microposts = pagy @user.microposts.recent,
+                              items: Settings.development.page_10
+  end
 
   def new
     @user = User.new
@@ -56,14 +59,6 @@ class UsersController < ApplicationController
 
     flash[:danger] = t(".not_authorized")
     redirect_to root_path
-  end
-
-  def require_login
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t(".please_login")
-    redirect_to login_path
   end
 
   def load_user

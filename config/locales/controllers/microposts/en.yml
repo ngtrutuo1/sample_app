@@ -1,0 +1,13 @@
+en:
+  microposts:
+    micropost_invalid: "Micropost not found or you do not have permission to delete it."
+    micropost:
+      posted_at: "Posted at %{time} ago"
+      delete: "Delete"
+      are_you_sure: "Are you sure to delete this post?"
+    create:
+      micropost_created: "Micropost created"
+      micropost_failed: "Failed to create micropost"
+    destroy:
+      micropost_deleted: "Micropost deleted"
+      micropost_delete_failed: "Failed to delete micropost"

@@ -1,0 +1,12 @@
+vi:
+  activerecord:
+    models:
+      micropost: "Bài viết"
+    attributes:
+      micropost:
+        content: "Nội dung"
+        image: "Hình ảnh"
+  errors:
+    messages:
+      image_too_big: "Hình ảnh tải lên quá lớn. Kích thước tối đa là %{size} MB."
+      must_be_valid_image_format: "Tệp tải lên phải là định dạng hình ảnh hợp lệ (JPEG, PNG hoặc GIF)"

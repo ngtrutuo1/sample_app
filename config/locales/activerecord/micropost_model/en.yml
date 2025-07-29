@@ -1,0 +1,12 @@
+en:
+  activerecord:
+    models:
+      micropost: "Micropost"
+    attributes:
+      micropost:
+        content: "Content"
+        image: "Image"
+  errors:
+    messages:
+      image_too_big: "The uploaded image is too large. Maximum size is %{size}MB."
+      must_be_valid_image_format: "Uploaded files must be a valid image format (JPEG, PNG, or GIF)"
