@@ -1,6 +1,7 @@
 class Micropost < ApplicationRecord
   MICROPOST_PERMIT = %i(image content).freeze
   IMAGE_ALLOWED_TYPE = %w(image/jpeg image/png image/gif).freeze
+  EAGER_LOAD_ASSOCIATIONS = [:user, {image_attachment: :blob}].freeze
 
   belongs_to :user
   has_one_attached :image do |attachable|

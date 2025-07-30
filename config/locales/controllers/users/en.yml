@@ -1,6 +1,10 @@
 en:
   users:
+    processing: "Processing..."
     please_login: "Please login!"
+    user_not_found: "Can't find this user"
+    following: "Following"
+    followers: "Followers"
     user:
       delete: "Delete"
       delete_confirm: "Are you sure to delete account %{name}?"
@@ -23,7 +27,6 @@ en:
     edit:
       update_profile: "Update Profile"
       edit_info: "Edit Personal Information"
-      user_not_found: "Can't find this user"
       save_changes: "Save changes"
       change: "Change "
       cannot_edit: "You dont have rights to edit this profile!"
@@ -34,6 +37,15 @@ en:
       failed: "Failed to delete %{name} account"
     index:
       all_users: "All Users"
+    follow:
+      follow_btn: "Follow"
+      followers: "Followers"
+      following: "Following"
+    unfollow:
+      unfollow_btn: "Unfollow"
+    show_follow:
+      profile: "Profile"
+      microposts: "Microposts"
     time:
       formats:
         long: "%B %d, %Y %H:%M"

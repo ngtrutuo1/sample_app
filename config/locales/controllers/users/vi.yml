@@ -1,6 +1,10 @@
 vi:
   users:
+    processing: "Đang xử lý..."
     please_login: "Xin hãy đăng nhập!"
+    user_not_found: "Không thể tìm thấy người dùng này"
+    following: "Đang theo dõi"
+    followers: "Người theo dõi"
     user:
       delete: "Xóa"
       delete_confirm: "Bạn chắc chắn muốn xóa tài khoản %{name}?"
@@ -23,7 +27,6 @@ vi:
     edit:
       update_profile: "Cập nhật hồ sơ"
       edit_info: "Chỉnh sửa thông tin cá nhân"
-      user_not_found: "Không thể tìm thấy người dùng này"
       save_changes: "Lưu thay đổi"
       change: "Thay đổi"
       cannot_edit: "Bạn không có quyền để chỉnh sửa hồ sơ này!"
@@ -34,6 +37,15 @@ vi:
       failed: "Xóa tài khoản %{name} thất bại!"
     index:
       all_users: "Tất cả người dùng"
+    follow:
+      follow_btn: "Theo dõi"
+      followers: "Người theo dõi"
+      following: "Đang theo dõi"
+    unfollow:
+      unfollow_btn: "Bỏ theo dõi"
+    show_follow:
+      profile: "Hồ sơ"
+      microposts: "Bài viết"
     time:
       formats:
         long: "%B %d, %Y %H:%M"

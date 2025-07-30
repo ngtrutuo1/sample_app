@@ -2,6 +2,7 @@ class MicropostsController < ApplicationController
   before_action :require_login, only: %i(create destroy)
   before_action :authorize_user, only: :destroy
 
+  # POST /microposts
   def create
     @micropost = current_user.microposts.build micropost_params
 
@@ -13,6 +14,7 @@ class MicropostsController < ApplicationController
     redirect_to root_url
   end
 
+  # DELETE /microposts/:id
   def destroy
     if @micropost.destroy
       flash[:success] = t(".micropost_deleted")

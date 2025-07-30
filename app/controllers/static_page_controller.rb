@@ -1,4 +1,5 @@
 class StaticPageController < ApplicationController
+  # GET: /
   def home
     return unless logged_in?
 
@@ -7,5 +8,6 @@ class StaticPageController < ApplicationController
                               items: Settings.development.page_10
   end
 
+  # GET: /help
   def help; end
 end

@@ -1,20 +1,25 @@
 class UsersController < ApplicationController
   include SessionsHelper
 
-  before_action :require_login, only: %i(index edit update show)
-  before_action :load_user, only: %i(show edit update destroy)
+  before_action :require_login,
+                only: %i(index edit update destroy following followers)
+  before_action :load_user,
+                only: %i(show edit update destroy following followers)
   before_action :admin_user, only: :destroy
   before_action :can_update_user, only: %i(edit update)
 
+  # GET: /users/:id
   def show
     @page, @microposts = pagy @user.microposts.recent,
                               items: Settings.development.page_10
   end
 
+  # GET: /users/new
   def new
     @user = User.new
   end
 
+  # POST: /users
   def create
     @user = User.new user_params
     if @user.save
@@ -26,8 +31,10 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET: /users/:id/settings
   def edit; end
 
+  # PATCH: /users/:id
   def update
     @user = User.find_by id: params[:id]
     if @user.update user_params
@@ -38,10 +45,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET: /users
   def index
     @pagy, @users = pagy(User.recent, items: Settings.development.page_10)
   end
 
+  # DELETE: /users/:id
   def destroy
     if @user.destroy
       flash[:success] = t(".deleted", name: @user.name)
@@ -50,6 +59,21 @@ class UsersController < ApplicationController
     end
 
     redirect_to users_path
+  end
+
+  # GET: /users/:id/following
+  def following
+    @title = t(".following")
+    @pagy, @users = pagy @user.following, items: Settings.development.page_10
+    render :show_follow
+  end
+
+  # GET: /users/:id/followers
+  def followers
+    @title = t(".followers")
+    @pagy, @users = pagy @user.followers, items: Settings.development.page_10
+
+    render :show_follow
   end
 
   private
